@@ -100,8 +100,14 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var Alertmanager = require('alertmanager');
 
+var defaultClient = Alertmanager.ApiClient.instance;
+// Configure API key authorization: auth_token
+var auth_token = defaultClient.authentications['auth_token'];
+auth_token.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//auth_token.apiKeyPrefix['Authorization'] = "Token"
 
-var api = new Alertmanager.DefaultApi()
+var api = new Alertmanager.ChannelsApi()
 var id = "id_example"; // {String} 
 var callback = function(error, data, response) {
   if (error) {
@@ -110,7 +116,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.deleteClientAppGetDelete(id, callback);
+api.deletePolicyChannelsDelete(id, callback);
 
 ```
 
@@ -120,22 +126,45 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*Alertmanager.DefaultApi* | [**deleteClientAppGetDelete**](docs/DefaultApi.md#deleteClientAppGetDelete) | **DELETE** /client_apps/{id} | 
-*Alertmanager.DefaultApi* | [**getClientAppGet**](docs/DefaultApi.md#getClientAppGet) | **GET** /client_apps/{id} | 
-*Alertmanager.DefaultApi* | [**getClientAppGetAll**](docs/DefaultApi.md#getClientAppGetAll) | **GET** /client_apps | 
-*Alertmanager.DefaultApi* | [**getDocs**](docs/DefaultApi.md#getDocs) | **GET** /docs | 
-*Alertmanager.DefaultApi* | [**getHealthCheck**](docs/DefaultApi.md#getHealthCheck) | **GET** /health_check | 
-*Alertmanager.DefaultApi* | [**getSwaggerJson**](docs/DefaultApi.md#getSwaggerJson) | **GET** /docs/swagger.json | 
-*Alertmanager.DefaultApi* | [**postClientAppPost**](docs/DefaultApi.md#postClientAppPost) | **POST** /client_apps/{id} | 
-*Alertmanager.DefaultApi* | [**putClientAppPut**](docs/DefaultApi.md#putClientAppPut) | **PUT** /client_apps | 
+*Alertmanager.ChannelsApi* | [**deletePolicyChannelsDelete**](docs/ChannelsApi.md#deletePolicyChannelsDelete) | **DELETE** /channels/{id} | 
+*Alertmanager.ChannelsApi* | [**getPolicyChannelsGet**](docs/ChannelsApi.md#getPolicyChannelsGet) | **GET** /channels/{id} | 
+*Alertmanager.ChannelsApi* | [**getPolicyChannelsGetAll**](docs/ChannelsApi.md#getPolicyChannelsGetAll) | **GET** /channels | 
+*Alertmanager.ChannelsApi* | [**postPolicyChannelsPost**](docs/ChannelsApi.md#postPolicyChannelsPost) | **POST** /channels | 
+*Alertmanager.ChannelsApi* | [**postPolicyChannelsTest**](docs/ChannelsApi.md#postPolicyChannelsTest) | **POST** /channels/test | 
+*Alertmanager.ChannelsApi* | [**putPolicyChannelsPut**](docs/ChannelsApi.md#putPolicyChannelsPut) | **PUT** /channels/{id} | 
+*Alertmanager.DocsApi* | [**getSwaggerJson**](docs/DocsApi.md#getSwaggerJson) | **GET** /docs/swagger.json | 
+*Alertmanager.DocsApi* | [**getSwaggerYml**](docs/DocsApi.md#getSwaggerYml) | **GET** /docs/swagger.yml | 
+*Alertmanager.EventsApi* | [**getEventsGet**](docs/EventsApi.md#getEventsGet) | **GET** /events/{id} | 
+*Alertmanager.EventsApi* | [**getEventsGetAll**](docs/EventsApi.md#getEventsGetAll) | **GET** /events | 
+*Alertmanager.EventsApi* | [**getEventsParametersGet**](docs/EventsApi.md#getEventsParametersGet) | **GET** /events/parameters | 
+*Alertmanager.EventsApi* | [**postEventsPost**](docs/EventsApi.md#postEventsPost) | **POST** /events | 
+*Alertmanager.HealthCheckApi* | [**getHealthCheck**](docs/HealthCheckApi.md#getHealthCheck) | **GET** /health_check | 
+*Alertmanager.NotificationsApi* | [**getNotificationLogGet**](docs/NotificationsApi.md#getNotificationLogGet) | **GET** /notifications/{id} | 
+*Alertmanager.NotificationsApi* | [**getNotificationLogGetAll**](docs/NotificationsApi.md#getNotificationLogGetAll) | **GET** /notifications | 
+*Alertmanager.PoliciesApi* | [**deletePoliciesDelete**](docs/PoliciesApi.md#deletePoliciesDelete) | **DELETE** /policies/{id} | 
+*Alertmanager.PoliciesApi* | [**getPoliciesGet**](docs/PoliciesApi.md#getPoliciesGet) | **GET** /policies/{id} | 
+*Alertmanager.PoliciesApi* | [**getPoliciesGetAll**](docs/PoliciesApi.md#getPoliciesGetAll) | **GET** /policies | 
+*Alertmanager.PoliciesApi* | [**postPoliciesPost**](docs/PoliciesApi.md#postPoliciesPost) | **POST** /policies | 
+*Alertmanager.PoliciesApi* | [**putPoliciesPut**](docs/PoliciesApi.md#putPoliciesPut) | **PUT** /policies/{id} | 
+*Alertmanager.WelcomeApi* | [**getWelcome**](docs/WelcomeApi.md#getWelcome) | **GET** / | 
 
 
 ## Documentation for Models
 
- - [Alertmanager.ClientAppSchema](docs/ClientAppSchema.md)
+ - [Alertmanager.EventSchema](docs/EventSchema.md)
+ - [Alertmanager.PaginationSchema](docs/PaginationSchema.md)
+ - [Alertmanager.PolicyChannelSchema](docs/PolicyChannelSchema.md)
+ - [Alertmanager.PolicySchema](docs/PolicySchema.md)
 
 
 ## Documentation for Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+### auth_token
+
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 

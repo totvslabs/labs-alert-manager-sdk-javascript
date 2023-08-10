@@ -13,8 +13,17 @@
 
 
 import ApiClient from './ApiClient';
-import ClientAppSchema from './model/ClientAppSchema';
-import DefaultApi from './api/DefaultApi';
+import EventSchema from './model/EventSchema';
+import PaginationSchema from './model/PaginationSchema';
+import PolicyChannelSchema from './model/PolicyChannelSchema';
+import PolicySchema from './model/PolicySchema';
+import ChannelsApi from './api/ChannelsApi';
+import DocsApi from './api/DocsApi';
+import EventsApi from './api/EventsApi';
+import HealthCheckApi from './api/HealthCheckApi';
+import NotificationsApi from './api/NotificationsApi';
+import PoliciesApi from './api/PoliciesApi';
+import WelcomeApi from './api/WelcomeApi';
 
 
 /**
@@ -56,14 +65,68 @@ export {
     ApiClient,
 
     /**
-     * The ClientAppSchema model constructor.
-     * @property {module:model/ClientAppSchema}
+     * The EventSchema model constructor.
+     * @property {module:model/EventSchema}
      */
-    ClientAppSchema,
+    EventSchema,
 
     /**
-    * The DefaultApi service constructor.
-    * @property {module:api/DefaultApi}
+     * The PaginationSchema model constructor.
+     * @property {module:model/PaginationSchema}
+     */
+    PaginationSchema,
+
+    /**
+     * The PolicyChannelSchema model constructor.
+     * @property {module:model/PolicyChannelSchema}
+     */
+    PolicyChannelSchema,
+
+    /**
+     * The PolicySchema model constructor.
+     * @property {module:model/PolicySchema}
+     */
+    PolicySchema,
+
+    /**
+    * The ChannelsApi service constructor.
+    * @property {module:api/ChannelsApi}
     */
-    DefaultApi
+    ChannelsApi,
+
+    /**
+    * The DocsApi service constructor.
+    * @property {module:api/DocsApi}
+    */
+    DocsApi,
+
+    /**
+    * The EventsApi service constructor.
+    * @property {module:api/EventsApi}
+    */
+    EventsApi,
+
+    /**
+    * The HealthCheckApi service constructor.
+    * @property {module:api/HealthCheckApi}
+    */
+    HealthCheckApi,
+
+    /**
+    * The NotificationsApi service constructor.
+    * @property {module:api/NotificationsApi}
+    */
+    NotificationsApi,
+
+    /**
+    * The PoliciesApi service constructor.
+    * @property {module:api/PoliciesApi}
+    */
+    PoliciesApi,
+
+    /**
+    * The WelcomeApi service constructor.
+    * @property {module:api/WelcomeApi}
+    */
+    WelcomeApi
 };
