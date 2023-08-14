@@ -36,6 +36,47 @@ export default class EventsApi {
 
 
     /**
+     * Callback function to receive the result of the deleteEventsParametersDelete operation.
+     * @callback module:api/EventsApi~deleteEventsParametersDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param {String} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} appKey 
+     * @param {module:api/EventsApi~deleteEventsParametersDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link String}
+     */
+    deleteEventsParametersDelete(appKey, callback) {
+      let postBody = null;
+      // verify the required parameter 'appKey' is set
+      if (appKey === undefined || appKey === null) {
+        throw new Error("Missing the required parameter 'appKey' when calling deleteEventsParametersDelete");
+      }
+
+      let pathParams = {
+        'app_key': appKey
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['auth_token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = 'String';
+      return this.apiClient.callApi(
+        '/events/parameters/{app_key}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getEventsGet operation.
      * @callback module:api/EventsApi~getEventsGetCallback
      * @param {String} error Error message, if any.

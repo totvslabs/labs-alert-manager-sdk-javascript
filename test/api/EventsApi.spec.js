@@ -48,6 +48,16 @@
   }
 
   describe('EventsApi', function() {
+    describe('deleteEventsParametersDelete', function() {
+      it('should call deleteEventsParametersDelete successfully', function(done) {
+        //uncomment below and update the code to test deleteEventsParametersDelete
+        //instance.deleteEventsParametersDelete(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getEventsGet', function() {
       it('should call getEventsGet successfully', function(done) {
         //uncomment below and update the code to test getEventsGet

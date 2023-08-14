@@ -134,6 +134,7 @@ Class | Method | HTTP request | Description
 *Alertmanager.ChannelsApi* | [**putPolicyChannelsPut**](docs/ChannelsApi.md#putPolicyChannelsPut) | **PUT** /channels/{id} | 
 *Alertmanager.DocsApi* | [**getSwaggerJson**](docs/DocsApi.md#getSwaggerJson) | **GET** /docs/swagger.json | 
 *Alertmanager.DocsApi* | [**getSwaggerYml**](docs/DocsApi.md#getSwaggerYml) | **GET** /docs/swagger.yml | 
+*Alertmanager.EventsApi* | [**deleteEventsParametersDelete**](docs/EventsApi.md#deleteEventsParametersDelete) | **DELETE** /events/parameters/{app_key} | 
 *Alertmanager.EventsApi* | [**getEventsGet**](docs/EventsApi.md#getEventsGet) | **GET** /events/{id} | 
 *Alertmanager.EventsApi* | [**getEventsGetAll**](docs/EventsApi.md#getEventsGetAll) | **GET** /events | 
 *Alertmanager.EventsApi* | [**getEventsParametersGet**](docs/EventsApi.md#getEventsParametersGet) | **GET** /events/parameters | 
