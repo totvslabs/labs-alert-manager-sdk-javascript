@@ -22,7 +22,7 @@ class PolicySchema {
     /**
      * Constructs a new <code>PolicySchema</code>.
      * @alias module:model/PolicySchema
-     * @param channels {Object} List of channel notification
+     * @param channels {Array.<String>} List of channel notification
      * @param clientSource {String} Policy Client source
      * @param clientUuid {String} Policy Client UUID
      * @param deleted {Boolean} Policy deleted
@@ -76,7 +76,7 @@ class PolicySchema {
             obj = obj || new PolicySchema();
 
             if (data.hasOwnProperty('channels')) {
-                obj['channels'] = ApiClient.convertToType(data['channels'], Object);
+                obj['channels'] = ApiClient.convertToType(data['channels'], ['String']);
             }
             if (data.hasOwnProperty('client_source')) {
                 obj['client_source'] = ApiClient.convertToType(data['client_source'], 'String');
@@ -139,6 +139,10 @@ class PolicySchema {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['channels'])) {
+            throw new Error("Expected the field `channels` to be an array in the JSON data but got " + data['channels']);
+        }
         // ensure the json data is a string
         if (data['client_source'] && !(typeof data['client_source'] === 'string' || data['client_source'] instanceof String)) {
             throw new Error("Expected the field `client_source` to be a primitive type in the JSON string but got " + data['client_source']);
@@ -174,7 +178,7 @@ PolicySchema.RequiredProperties = ["channels", "client_source", "client_uuid", "
 
 /**
  * List of channel notification
- * @member {Object} channels
+ * @member {Array.<String>} channels
  */
 PolicySchema.prototype['channels'] = undefined;
 

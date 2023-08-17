@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import NotificationSchema from '../model/NotificationSchema';
 import PaginationSchema from '../model/PaginationSchema';
-import PolicyChannelSchema from '../model/PolicyChannelSchema';
 
 /**
 * Notifications service.
@@ -39,14 +39,14 @@ export default class NotificationsApi {
      * Callback function to receive the result of the getNotificationLogGet operation.
      * @callback module:api/NotificationsApi~getNotificationLogGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PolicyChannelSchema} data The data returned by the service call.
+     * @param {module:model/NotificationSchema} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {String} id 
      * @param {module:api/NotificationsApi~getNotificationLogGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PolicyChannelSchema}
+     * data is of type: {@link module:model/NotificationSchema}
      */
     getNotificationLogGet(id, callback) {
       let postBody = null;
@@ -68,7 +68,7 @@ export default class NotificationsApi {
       let authNames = ['auth_token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = PolicyChannelSchema;
+      let returnType = NotificationSchema;
       return this.apiClient.callApi(
         '/notifications/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -106,6 +106,47 @@ export default class NotificationsApi {
       let returnType = PaginationSchema;
       return this.apiClient.callApi(
         '/notifications', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the postNotificationLogResend operation.
+     * @callback module:api/NotificationsApi~postNotificationLogResendCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/NotificationSchema} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} id 
+     * @param {module:api/NotificationsApi~postNotificationLogResendCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/NotificationSchema}
+     */
+    postNotificationLogResend(id, callback) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling postNotificationLogResend");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['auth_token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = NotificationSchema;
+      return this.apiClient.callApi(
+        '/notifications/{id}/resend', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

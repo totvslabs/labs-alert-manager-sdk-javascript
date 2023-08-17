@@ -142,6 +142,7 @@ Class | Method | HTTP request | Description
 *Alertmanager.HealthCheckApi* | [**getHealthCheck**](docs/HealthCheckApi.md#getHealthCheck) | **GET** /health_check | 
 *Alertmanager.NotificationsApi* | [**getNotificationLogGet**](docs/NotificationsApi.md#getNotificationLogGet) | **GET** /notifications/{id} | 
 *Alertmanager.NotificationsApi* | [**getNotificationLogGetAll**](docs/NotificationsApi.md#getNotificationLogGetAll) | **GET** /notifications | 
+*Alertmanager.NotificationsApi* | [**postNotificationLogResend**](docs/NotificationsApi.md#postNotificationLogResend) | **POST** /notifications/{id}/resend | 
 *Alertmanager.PoliciesApi* | [**deletePoliciesDelete**](docs/PoliciesApi.md#deletePoliciesDelete) | **DELETE** /policies/{id} | 
 *Alertmanager.PoliciesApi* | [**getPoliciesGet**](docs/PoliciesApi.md#getPoliciesGet) | **GET** /policies/{id} | 
 *Alertmanager.PoliciesApi* | [**getPoliciesGetAll**](docs/PoliciesApi.md#getPoliciesGetAll) | **GET** /policies | 
@@ -153,6 +154,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Alertmanager.EventSchema](docs/EventSchema.md)
+ - [Alertmanager.NotificationSchema](docs/NotificationSchema.md)
  - [Alertmanager.PaginationSchema](docs/PaginationSchema.md)
  - [Alertmanager.PolicyChannelSchema](docs/PolicyChannelSchema.md)
  - [Alertmanager.PolicySchema](docs/PolicySchema.md)

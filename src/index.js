@@ -14,6 +14,7 @@
 
 import ApiClient from './ApiClient';
 import EventSchema from './model/EventSchema';
+import NotificationSchema from './model/NotificationSchema';
 import PaginationSchema from './model/PaginationSchema';
 import PolicyChannelSchema from './model/PolicyChannelSchema';
 import PolicySchema from './model/PolicySchema';
@@ -69,6 +70,12 @@ export {
      * @property {module:model/EventSchema}
      */
     EventSchema,
+
+    /**
+     * The NotificationSchema model constructor.
+     * @property {module:model/NotificationSchema}
+     */
+    NotificationSchema,
 
     /**
      * The PaginationSchema model constructor.

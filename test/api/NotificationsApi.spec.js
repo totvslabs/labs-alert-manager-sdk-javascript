@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('postNotificationLogResend', function() {
+      it('should call postNotificationLogResend successfully', function(done) {
+        //uncomment below and update the code to test postNotificationLogResend
+        //instance.postNotificationLogResend(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

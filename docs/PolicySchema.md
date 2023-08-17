@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**channels** | **Object** | List of channel notification | 
+**channels** | **[String]** | List of channel notification | 
 **clientSource** | **String** | Policy Client source | 
 **clientUuid** | **String** | Policy Client UUID | 
 **createdAt** | **Date** |  | [optional] 
