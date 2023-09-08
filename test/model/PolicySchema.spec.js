@@ -120,26 +120,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property labels (base name: "labels")', function() {
-      // uncomment below and update the code to test the property labels
-      //var instance = new Alertmanager.PolicySchema();
-      //expect(instance).to.be();
-    });
-
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new Alertmanager.PolicySchema();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property severity (base name: "severity")', function() {
-      // uncomment below and update the code to test the property severity
-      //var instance = new Alertmanager.PolicySchema();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
       //var instance = new Alertmanager.PolicySchema();
       //expect(instance).to.be();
     });

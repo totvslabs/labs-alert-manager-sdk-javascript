@@ -32,14 +32,11 @@ class PolicySchema {
      * @param frequencyMinutes {Number} Quantity of alert interval time
      * @param frequencyOccurrences {Number} Quantity of alert occurrencies
      * @param id {String} Id
-     * @param labels {Object} Policy labels
      * @param name {String} Policy name
-     * @param severity {String} Policy severity
-     * @param type {String} Policy type
      */
-    constructor(channels, clientSource, clientUuid, deleted, enabled, filters, frequency, frequencyMinutes, frequencyOccurrences, id, labels, name, severity, type) { 
+    constructor(channels, clientSource, clientUuid, deleted, enabled, filters, frequency, frequencyMinutes, frequencyOccurrences, id, name) { 
         
-        PolicySchema.initialize(this, channels, clientSource, clientUuid, deleted, enabled, filters, frequency, frequencyMinutes, frequencyOccurrences, id, labels, name, severity, type);
+        PolicySchema.initialize(this, channels, clientSource, clientUuid, deleted, enabled, filters, frequency, frequencyMinutes, frequencyOccurrences, id, name);
     }
 
     /**
@@ -47,7 +44,7 @@ class PolicySchema {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, channels, clientSource, clientUuid, deleted, enabled, filters, frequency, frequencyMinutes, frequencyOccurrences, id, labels, name, severity, type) { 
+    static initialize(obj, channels, clientSource, clientUuid, deleted, enabled, filters, frequency, frequencyMinutes, frequencyOccurrences, id, name) { 
         obj['channels'] = channels;
         obj['client_source'] = clientSource;
         obj['client_uuid'] = clientUuid;
@@ -58,10 +55,7 @@ class PolicySchema {
         obj['frequency_minutes'] = frequencyMinutes;
         obj['frequency_occurrences'] = frequencyOccurrences;
         obj['id'] = id;
-        obj['labels'] = labels;
         obj['name'] = name;
-        obj['severity'] = severity;
-        obj['type'] = type;
     }
 
     /**
@@ -108,17 +102,8 @@ class PolicySchema {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('labels')) {
-                obj['labels'] = ApiClient.convertToType(data['labels'], Object);
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('severity')) {
-                obj['severity'] = ApiClient.convertToType(data['severity'], 'String');
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
@@ -159,14 +144,6 @@ class PolicySchema {
         if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
             throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
-        // ensure the json data is a string
-        if (data['severity'] && !(typeof data['severity'] === 'string' || data['severity'] instanceof String)) {
-            throw new Error("Expected the field `severity` to be a primitive type in the JSON string but got " + data['severity']);
-        }
-        // ensure the json data is a string
-        if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
-            throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
-        }
 
         return true;
     }
@@ -174,7 +151,7 @@ class PolicySchema {
 
 }
 
-PolicySchema.RequiredProperties = ["channels", "client_source", "client_uuid", "deleted", "enabled", "filters", "frequency", "frequency_minutes", "frequency_occurrences", "id", "labels", "name", "severity", "type"];
+PolicySchema.RequiredProperties = ["channels", "client_source", "client_uuid", "deleted", "enabled", "filters", "frequency", "frequency_minutes", "frequency_occurrences", "id", "name"];
 
 /**
  * List of channel notification
@@ -242,28 +219,10 @@ PolicySchema.prototype['frequency_occurrences'] = undefined;
 PolicySchema.prototype['id'] = undefined;
 
 /**
- * Policy labels
- * @member {Object} labels
- */
-PolicySchema.prototype['labels'] = undefined;
-
-/**
  * Policy name
  * @member {String} name
  */
 PolicySchema.prototype['name'] = undefined;
-
-/**
- * Policy severity
- * @member {String} severity
- */
-PolicySchema.prototype['severity'] = undefined;
-
-/**
- * Policy type
- * @member {String} type
- */
-PolicySchema.prototype['type'] = undefined;
 
 /**
  * @member {Date} updated_at
